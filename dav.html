@@ -1,28 +1,28 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DAV — Diseño 2D y 3D por voz con FreeCAD</title>
-  <meta name="description" content="DAV permite diseñar en 2D y 3D con FreeCAD mediante comandos de voz. Proyecto open source de la UADER.">
-  <link rel="canonical" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/dav.html">
+  <title>DAV — Voice-driven 2D and 3D design with FreeCAD</title>
+  <meta name="description" content="DAV lets you design in 2D and 3D with FreeCAD using voice commands. Open source project from UADER.">
+  <link rel="canonical" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/en/dav.html">
   <link rel="alternate" hreflang="es" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/dav.html">
   <link rel="alternate" hreflang="en" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/en/dav.html">
   <link rel="alternate" hreflang="x-default" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/dav.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DAV — Diseño 2D y 3D por voz con FreeCAD">
-  <meta property="og:description" content="DAV permite diseñar en 2D y 3D con FreeCAD mediante comandos de voz. Proyecto open source de la UADER.">
-  <meta property="og:url" content="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/dav.html">
-  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="DAV — Voice-driven 2D and 3D design with FreeCAD">
+  <meta property="og:description" content="DAV lets you design in 2D and 3D with FreeCAD using voice commands. Open source project from UADER.">
+  <meta property="og:url" content="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/en/dav.html">
+  <meta property="og:locale" content="en_US">
   <!-- TODO: og:image (URL absoluta bajo https://dav-project-team-uader.github.io/DAV-ATRIA-Web/assets/img/) cuando se exporte desde Figma -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235A1F6E'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-active="dav">
     <div class="nav-blob" aria-hidden="true">
@@ -31,14 +31,14 @@
       <span class="nav-blob__layer nav-blob__layer--about"></span>
     </div>
     <div class="site-header__bar">
-      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
-      <nav id="main-nav" class="main-nav" aria-label="Principal">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main">
         <a href="index.html"><span translate="no" class="notranslate">Atria</span></a>
         <a href="dav.html" aria-current="page">DAV</a>
-        <a href="nosotros.html">Sobre nosotros</a>
+        <a href="about.html">About us</a>
       </nav>
-      <nav class="lang-switch" aria-label="Idioma">
-        <a href="en/dav.html" lang="en" hreflang="en" title="English">EN</a>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="../dav.html" lang="es" hreflang="es" title="Español">ES</a>
       </nav>
     </div>
   </header>
@@ -49,40 +49,39 @@
         <div class="hero">
           <div class="hero__text">
             <h1 id="page-title">DAV</h1>
-            <p class="lead">Diseñá en 2D y 3D mediante comandos de voz y descubrí una nueva forma de interactuar con las herramientas de FreeCAD a través del diseño asistido por voz.</p>
+            <p class="lead">Design in 2D and 3D using voice commands and discover a new way to interact with FreeCAD tools through voice-assisted design.</p>
             <div class="btn-row">
-              <a class="btn btn--dav" href="#descargas"><span class="btn__label">Descargar</span></a>
+              <a class="btn btn--dav" href="#descargas"><span class="btn__label">Download</span></a>
             </div>
           </div>
-          <!-- TODO: exportar la ilustración de DAV desde Figma a assets/img/ (decorativa: alt="") -->
-          <div class="hero__visual hero__visual--dav" aria-hidden="true"></div>
+          <img class="hero__visual hero__visual--dav" src="../assets/img/dav-ilustracion.svg" alt="" width="509" height="459">
         </div>
         <div class="downloads" id="descargas">
-          <div class="downloads__video" role="img" aria-label="Espacio reservado para el video tutorial"></div>
-          <p class="downloads__more">Más videos en:
-            <span class="link-soon" data-link="youtube">YouTube <small>(Próximamente)</small></span>
+          <div class="downloads__video" role="img" aria-label="Space reserved for the tutorial video"></div>
+          <p class="downloads__more">More videos on:
+            <span class="link-soon" data-link="youtube">YouTube <small>(Coming soon)</small></span>
           </p>
-          <div class="steps" role="group" aria-label="Cómo instalar DAV">
+          <div class="steps" role="group" aria-label="How to install DAV">
             <div class="step">
-              <h2>Elegí tu sistema operativo</h2>
-              <p>Descargá la versión para Windows o Linux, según corresponda.</p>
+              <h2>Choose your operating system</h2>
+              <p>Download the Windows or Linux version, whichever applies.</p>
             </div>
             <div class="step">
-              <h2>Mantené la descarga</h2>
-              <p>Si aparece una advertencia de seguridad, seleccioná «Mantener en el dispositivo».</p>
+              <h2>Keep the download</h2>
+              <p>If a security warning appears, select “Keep on device”.</p>
             </div>
             <div class="step">
-              <h2>Ejecutá la aplicación</h2>
-              <p>Buscá el archivo de DAV y abrilo.</p>
+              <h2>Run the app</h2>
+              <p>Find the DAV file and open it.</p>
             </div>
             <div class="btn-row">
-              <button type="button" class="btn btn--dav" data-link="downloads.davLinux" disabled aria-disabled="true"><span class="btn__label">Descargar Linux</span><small>Próximamente</small></button>
-              <button type="button" class="btn btn--dav" data-link="downloads.davWindows" disabled aria-disabled="true"><span class="btn__label">Descargar Windows</span><small>Próximamente</small></button>
+              <button type="button" class="btn btn--dav" data-link="downloads.davLinux" disabled aria-disabled="true"><span class="btn__label">Download Linux</span><small>Coming soon</small></button>
+              <button type="button" class="btn btn--dav" data-link="downloads.davWindows" disabled aria-disabled="true"><span class="btn__label">Download Windows</span><small>Coming soon</small></button>
             </div>
           </div>
           <div class="manual">
-            <button type="button" class="btn btn--outline btn--dav-outline" data-link="manual.dav" disabled aria-disabled="true"><span class="btn__label">Manual</span><small>Próximamente</small></button>
-            <p>La primera vez que abras la aplicación, puede tardar unos minutos en iniciar mientras descarga los componentes necesarios. <strong>Este proceso solo será necesario durante la configuración inicial.</strong></p>
+            <button type="button" class="btn btn--outline btn--dav-outline" data-link="manual.dav" disabled aria-disabled="true"><span class="btn__label">Manual</span><small>Coming soon</small></button>
+            <p>The first time you open the app, it may take a few minutes to start while it downloads the required components. <strong>This process is only needed during the initial setup.</strong></p>
           </div>
         </div>
       </div>
@@ -92,9 +91,9 @@
   <footer class="site-footer site-footer--dav">
     <div class="container site-footer__grid">
       <div>
-        <h2 class="site-footer__title">Contacto</h2>
+        <h2 class="site-footer__title">Contact</h2>
         <ul>
-          <li><a href="https://github.com/DAv-Project-Team-UADER/Atria/issues" target="_blank" rel="noopener noreferrer">Issues del repositorio</a></li>
+          <li><a href="https://github.com/DAv-Project-Team-UADER/Atria/issues" target="_blank" rel="noopener noreferrer">Repository issues</a></li>
         </ul>
       </div>
       <div class="site-footer__right">
@@ -106,11 +105,11 @@
           <li><a href="https://www.freecad.org" target="_blank" rel="noopener noreferrer">FreeCAD</a></li>
         </ul>
       </div>
-      <p class="site-footer__license">Proyecto open source bajo licencia <a href="https://github.com/DAv-Project-Team-UADER/Atria/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0</a>.</p>
+      <p class="site-footer__license">Open source project under the <a href="https://github.com/DAv-Project-Team-UADER/Atria/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 license</a>.</p>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
