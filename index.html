@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atria y DAV — Comandos de voz para diseño asistido por computadora</title>
-  <meta name="description" content="Atria y DAV: aplicaciones para trabajar con herramientas de diseño asistido por computadora (BIM, 2D y 3D) mediante comandos de voz. Proyecto open source de la UADER.">
+  <title>Atria — Comandos de voz para el banco de trabajo BIM</title>
+  <meta name="description" content="Atria permite interactuar con las herramientas del banco de trabajo BIM mediante comandos de voz. Proyecto open source de la UADER.">
   <link rel="canonical" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/">
   <link rel="alternate" hreflang="es" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/">
   <link rel="alternate" hreflang="en" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/en/">
   <link rel="alternate" hreflang="x-default" href="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Atria y DAV — Comandos de voz para diseño asistido por computadora">
-  <meta property="og:description" content="Atria y DAV: aplicaciones para trabajar con herramientas de diseño asistido por computadora (BIM, 2D y 3D) mediante comandos de voz. Proyecto open source de la UADER.">
+  <meta property="og:title" content="Atria — Comandos de voz para el banco de trabajo BIM">
+  <meta property="og:description" content="Atria permite interactuar con las herramientas del banco de trabajo BIM mediante comandos de voz. Proyecto open source de la UADER.">
   <meta property="og:url" content="https://dav-project-team-uader.github.io/DAV-ATRIA-Web/">
   <meta property="og:locale" content="es_AR">
-  <!-- TODO: agregar og:image cuando se exporte una imagen desde Figma (ruta absoluta bajo https://dav-project-team-uader.github.io/DAV-ATRIA-Web/assets/img/) -->
+  <!-- TODO: og:image (URL absoluta bajo https://dav-project-team-uader.github.io/DAV-ATRIA-Web/assets/img/) cuando se exporte desde Figma -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235A1F6E'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#atria">Saltar al contenido</a>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <header class="site-header" data-active="atria">
     <div class="nav-blob" aria-hidden="true">
@@ -33,47 +33,46 @@
     <div class="site-header__bar">
       <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
       <nav id="main-nav" class="main-nav" aria-label="Principal">
-        <a href="#dav" data-section="dav">DAV</a>
-        <a href="#atria" data-section="atria">Atria</a>
-        <a href="#nosotros" data-section="about">Sobre nosotros</a>
+        <a href="dav.html">DAV</a>
+        <a href="index.html" aria-current="page">Atria</a>
+        <a href="nosotros.html">Sobre nosotros</a>
       </nav>
       <nav class="lang-switch" aria-label="Idioma">
-        <a href="en/index.html#atria" lang="en" hreflang="en" data-lang-link title="English">EN</a>
+        <a href="en/index.html" lang="en" hreflang="en" title="English">EN</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section id="atria" class="section section--atria" aria-labelledby="atria-title">
+  <main id="main">
+    <section class="section section--atria" aria-labelledby="page-title">
       <div class="container">
         <div class="hero">
           <div class="hero__text">
-            <h1 id="atria-title">Atria</h1>
+            <h1 id="page-title">Atria</h1>
             <p class="lead">Interactuá con las herramientas del banco de trabajo BIM mediante comandos de voz y descubrí una nueva forma de trabajar con diseño asistido por computadora.</p>
             <div class="btn-row">
-              <button type="button" class="btn btn--atria" data-link="downloads.atriaWindows" disabled aria-disabled="true"><span class="btn__label">Descargar Windows</span><small>Próximamente</small></button>
-              <button type="button" class="btn btn--atria" data-link="downloads.atriaLinux" disabled aria-disabled="true"><span class="btn__label">Descargar Linux</span><small>Próximamente</small></button>
+              <a class="btn btn--atria" href="#descargas"><span class="btn__label">Descargar</span></a>
             </div>
           </div>
-          <!-- TODO: exportar la ilustración/logo de Atria desde Figma a assets/img/ y ubicarlo acá con alt="" (decorativo) -->
+          <!-- TODO: exportar la ilustración de Atria desde Figma a assets/img/ (decorativa: alt="") -->
           <div class="hero__visual hero__visual--atria" aria-hidden="true"></div>
         </div>
-        <div class="downloads">
+        <div class="downloads" id="descargas">
           <div class="downloads__video" role="img" aria-label="Espacio reservado para el video tutorial"></div>
           <p class="downloads__more">Más videos en:
-            <span class="link-soon" data-link="youtube" data-soon="Próximamente">YouTube <small>(Próximamente)</small></span>
+            <span class="link-soon" data-link="youtube">YouTube <small>(Próximamente)</small></span>
           </p>
-          <div class="steps" aria-label="Cómo instalar Atria">
+          <div class="steps" role="group" aria-label="Cómo instalar Atria">
             <div class="step">
-              <h3>Elegí tu sistema operativo</h3>
+              <h2>Elegí tu sistema operativo</h2>
               <p>Descargá la versión para Windows o Linux, según corresponda.</p>
             </div>
             <div class="step">
-              <h3>Mantené la descarga</h3>
+              <h2>Mantené la descarga</h2>
               <p>Si aparece una advertencia de seguridad, seleccioná «Mantener en el dispositivo».</p>
             </div>
             <div class="step">
-              <h3>Ejecutá la aplicación</h3>
+              <h2>Ejecutá la aplicación</h2>
               <p>Buscá el archivo de Atria y abrilo.</p>
             </div>
             <div class="btn-row">
@@ -88,118 +87,9 @@
         </div>
       </div>
     </section>
-
-    <section id="dav" class="section section--dav" aria-labelledby="dav-title">
-      <div class="container">
-        <div class="hero">
-          <div class="hero__text">
-            <h2 id="dav-title" class="title">DAV</h2>
-            <p class="lead">Diseñá en 2D y 3D mediante comandos de voz y descubrí una nueva forma de interactuar con las herramientas de FreeCAD a través del diseño asistido por voz.</p>
-            <div class="btn-row">
-              <button type="button" class="btn btn--dav" data-link="downloads.davWindows" disabled aria-disabled="true"><span class="btn__label">Descargar Windows</span><small>Próximamente</small></button>
-              <button type="button" class="btn btn--dav" data-link="downloads.davLinux" disabled aria-disabled="true"><span class="btn__label">Descargar Linux</span><small>Próximamente</small></button>
-            </div>
-          </div>
-          <!-- TODO: exportar la ilustración/logo de DAV desde Figma a assets/img/ -->
-          <div class="hero__visual hero__visual--dav" aria-hidden="true"></div>
-        </div>
-        <div class="downloads">
-          <div class="downloads__video" role="img" aria-label="Espacio reservado para el video tutorial"></div>
-          <p class="downloads__more">Más videos en:
-            <span class="link-soon" data-link="youtube" data-soon="Próximamente">YouTube <small>(Próximamente)</small></span>
-          </p>
-          <div class="steps" aria-label="Cómo instalar DAV">
-            <div class="step">
-              <h3>Elegí tu sistema operativo</h3>
-              <p>Descargá la versión para Windows o Linux, según corresponda.</p>
-            </div>
-            <div class="step">
-              <h3>Mantené la descarga</h3>
-              <p>Si aparece una advertencia de seguridad, seleccioná «Mantener en el dispositivo».</p>
-            </div>
-            <div class="step">
-              <h3>Ejecutá la aplicación</h3>
-              <p>Buscá el archivo de DAV y abrilo.</p>
-            </div>
-            <div class="btn-row">
-              <button type="button" class="btn btn--dav" data-link="downloads.davLinux" disabled aria-disabled="true"><span class="btn__label">Descargar Linux</span><small>Próximamente</small></button>
-              <button type="button" class="btn btn--dav" data-link="downloads.davWindows" disabled aria-disabled="true"><span class="btn__label">Descargar Windows</span><small>Próximamente</small></button>
-            </div>
-          </div>
-          <div class="manual">
-            <button type="button" class="btn btn--outline btn--dav-outline" data-link="manual.dav" disabled aria-disabled="true"><span class="btn__label">Manual</span><small>Próximamente</small></button>
-            <p>La primera vez que abras la aplicación, puede tardar unos minutos en iniciar mientras descarga los componentes necesarios. <strong>Este proceso solo será necesario durante la configuración inicial.</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="nosotros" class="section section--about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 id="about-title" class="title title--center">Sobre nosotros</h2>
-        <p class="about__text">Somos estudiantes de la Facultad de Ciencia y Tecnología de la UADER, sede Concepción del Uruguay, y desarrollamos Atria y DAV en el marco de una Práctica Educativa Territorial (PET). Ambas aplicaciones comparten el objetivo de ofrecer una alternativa accesible para personas con movilidad reducida en los brazos, permitiéndoles interactuar con herramientas digitales mediante comandos de voz.</p>
-        <div class="teams">
-          <div class="team">
-            <h3 class="team__title">DAV</h3>
-            <ul class="team__list">
-            <li>Abril Poggio</li>
-            <li>Agustín Scheffler</li>
-            <li>Agustín Urlarte</li>
-            <li>Alex Alvez</li>
-            <li>Alexander Borda</li>
-            <li>Benjamín Ayala</li>
-            <li>Bianca Tournour</li>
-            <li>Brian Schell</li>
-            <li>Camila Viñeg</li>
-            <li>Candela Rojas</li>
-            <li>David Bernhardt</li>
-            <li>Fabricio Gallo</li>
-            <li>Facundo País</li>
-            </ul>
-            <ul class="team__list">
-            <li>Jesús Serra</li>
-            <li>Joaquín Poggio</li>
-            <li>Juan Acuña</li>
-            <li>Julián Olivera</li>
-            <li>Lucas Tabacchi</li>
-            <li>Luigi Mete</li>
-            <li>Maitén Blanc</li>
-            <li>Micaela Saúl</li>
-            <li>Nicolás Barreto</li>
-            <li>Santino Dacuy</li>
-            <li>Tadeo Rochás</li>
-            <li>Tobías Carballo</li>
-            <li>Valentín Schaab</li>
-            </ul>
-          </div>
-          <div class="team">
-            <h3 class="team__title">Atria</h3>
-            <ul class="team__list">
-            <li>Abril Poggio</li>
-            <li>Agustín Urlarte</li>
-            <li>Alejandra Maidana</li>
-            <li>Axel Sandillú</li>
-            <li>Camila Viñeg</li>
-            <li>Facundo Marquez</li>
-            <li>Gian Moreyra</li>
-            <li>Julián Olivera</li>
-            </ul>
-            <ul class="team__list">
-            <li>Lorenzo Paredes</li>
-            <li>Maitén Blanc</li>
-            <li>Matías Balsetto</li>
-            <li>Micaela Saúl</li>
-            <li>Santiago Mout</li>
-            <li>Tadeo Rochás</li>
-            <li>Valentín Laiño</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer site-footer--atria">
     <div class="container site-footer__grid">
       <div>
         <h2 class="site-footer__title">Contacto</h2>
@@ -211,8 +101,8 @@
         <h2 class="site-footer__title">Links</h2>
         <ul>
           <li><a href="https://github.com/DAv-Project-Team-UADER" target="_blank" rel="noopener noreferrer">GitHub Organization</a></li>
-          <!-- TODO: confirmar la URL oficial de UADER FCyT y centralizarla en js/config.js -->
-          <li><span data-link="uader" data-text-only="true">UADER FCyT</span></li>
+          <!-- TODO: confirmar la URL oficial de UADER FCyT y cargarla en js/config.js (uader) -->
+          <li><span data-link="uader">UADER FCyT</span></li>
           <li><a href="https://www.freecad.org" target="_blank" rel="noopener noreferrer">FreeCAD</a></li>
         </ul>
       </div>

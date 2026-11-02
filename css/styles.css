@@ -111,18 +111,10 @@ a:focus-visible, button:focus-visible {
   transition: opacity 400ms ease;
   filter: blur(8px);
 }
-.nav-blob__layer--atria {
-  background: radial-gradient(ellipse at center, var(--atria-slate) 0%, var(--atria-blue-gray) 45%, transparent 75%);
-}
-.nav-blob__layer--dav {
-  background: radial-gradient(ellipse at center, var(--dav-green) 0%, var(--dav-amber) 50%, transparent 78%);
-}
-.nav-blob__layer--about {
-  background: radial-gradient(ellipse at center, var(--atria-purple) 0%, var(--dav-navy) 50%, transparent 78%);
-}
-.site-header[data-active="atria"] .nav-blob__layer--atria,
-.site-header[data-active="dav"] .nav-blob__layer--dav,
-.site-header[data-active="about"] .nav-blob__layer--about { opacity: 0.55; }
+.site-header[data-active="atria"] .nav-blob__layer { background: radial-gradient(ellipse at center, var(--atria-slate) 0%, var(--atria-blue-gray) 45%, transparent 75%); }
+.site-header[data-active="dav"] .nav-blob__layer { background: radial-gradient(ellipse at center, var(--dav-green) 0%, var(--dav-amber) 50%, transparent 78%); }
+.site-header[data-active="about"] .nav-blob__layer { background: radial-gradient(ellipse at center, var(--atria-purple) 0%, var(--dav-navy) 50%, transparent 78%); }
+.nav-blob__layer { opacity: 0.55; }
 
 .site-header__bar {
   position: relative;
@@ -144,7 +136,7 @@ a:focus-visible, button:focus-visible {
   transition: border-color var(--transition), transform var(--transition);
 }
 .main-nav a:hover { border-bottom-color: currentColor; }
-.main-nav a[aria-current="true"] { border-bottom-color: currentColor; font-size: 1.1em; }
+.main-nav a[aria-current="page"] { border-bottom-color: currentColor; font-size: 1.1em; }
 
 .lang-switch { position: absolute; right: var(--gutter); }
 .lang-switch a {
@@ -247,7 +239,7 @@ a:focus-visible, button:focus-visible {
 .downloads__more { grid-column: 1; font-size: var(--fs-small); margin: 0; }
 .steps { grid-column: 2; grid-row: 1 / span 2; color: #000; }
 .step { margin-bottom: 18px; font-size: var(--fs-step); line-height: 1.15; }
-.step h3 { font-size: inherit; font-weight: 700; margin: 0; }
+.step h2, .step h3 { font-family: var(--font-body); font-size: inherit; line-height: inherit; font-weight: 700; letter-spacing: 0; margin: 0; }
 .step p { font-weight: 400; margin: 0; }
 .manual {
   grid-column: 1 / -1;
@@ -279,6 +271,12 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--atria-slate); color: #fff; padding: 32px 0; }
+.site-footer--atria { background: var(--atria-slate); }
+/* Figma usa blanco sobre #49A6CF (2.7:1, no cumple AA); se usa texto oscuro (6:1) */
+.site-footer--dav { background: var(--dav-sky); color: #0b1f2e; }
+.site-footer--about { background: var(--atria-purple); }
+.site-footer a { color: inherit; }
+.site-footer a:focus-visible { outline-color: currentColor; }
 .site-footer__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .site-footer__title { font-size: 1.5rem; margin: 0 0 8px; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; font-size: var(--fs-small); }
@@ -327,3 +325,10 @@ a:focus-visible, button:focus-visible {
     animation: none !important;
   }
 }
+
+/* ---------- Footer por página (Figma: gris Atria, celeste DAV, violeta Sobre nosotros) ---------- */
+.site-footer[data-page="dav"] { background: var(--dav-sky); color: #0b2a40; }
+.site-footer[data-page="about"] { background: var(--atria-purple); }
+.site-footer[data-page="dav"] a:focus-visible { outline-color: #0b2a40; }
+.site-footer a:focus-visible { outline-color: #fff; }
+.site-footer[data-page="dav"] a:focus-visible { outline-color: #0b2a40; }
