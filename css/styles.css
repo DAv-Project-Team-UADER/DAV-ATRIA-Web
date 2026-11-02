@@ -179,7 +179,7 @@ a:focus-visible, button:focus-visible {
   min-height: 260px;
   border-radius: var(--radius);
 }
-.hero__visual--atria { border: 2px dashed var(--atria-blue-gray); }
+.hero__visual--atria { display: block; width: 100%; height: auto; min-height: 0; max-height: 560px; object-fit: contain; border-radius: 0; }
 .hero__visual--dav { border: 2px dashed var(--dav-sky); }
 
 /* ---------- Botones ---------- */
@@ -289,6 +289,7 @@ a:focus-visible, button:focus-visible {
   .hero, .downloads { grid-template-columns: 1fr; }
   .downloads__more, .steps { grid-column: 1; grid-row: auto; }
   .hero__visual { min-height: 180px; order: -1; }
+  .hero__visual--atria { max-height: 300px; }
 }
 
 @media (max-width: 720px) {
