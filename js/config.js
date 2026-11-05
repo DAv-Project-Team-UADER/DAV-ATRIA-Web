@@ -25,5 +25,5 @@ window.ATRIA_CONFIG = {
     dav: ""
   },
   // URL oficial de UADER FCyT (a confirmar).
-  uader: ""
+  uader: "https://fcytcdelu.uader.edu.ar/"
 };
