@@ -36,14 +36,13 @@
   --gutter: 16px;
   --radius: 8px;
 
-  /* Animación */
-  --transition: 200ms ease;          /* nav (TODO: confirmar con el prototipo) */
+  /* Animación: solo lo definido en el prototipo de Figma */
   --btn-transition: 300ms ease-out;  /* botones: Figma, Smart animate 300ms ease-out */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-padding-top: 72px; }
 
 body {
   margin: 0;
@@ -108,7 +107,6 @@ a:focus-visible, button:focus-visible {
   position: absolute;
   inset: -40% -10%;
   opacity: 0;
-  transition: opacity 400ms ease;
   filter: blur(8px);
 }
 .site-header[data-active="atria"] .nav-blob__layer { background: radial-gradient(ellipse at center, var(--atria-slate) 0%, var(--atria-blue-gray) 45%, transparent 75%); }
@@ -133,7 +131,6 @@ a:focus-visible, button:focus-visible {
   font-weight: 600;
   padding: 6px 4px;
   border-bottom: 2px solid transparent;
-  transition: border-color var(--transition), transform var(--transition);
 }
 .main-nav a:hover { border-bottom-color: currentColor; }
 .main-nav a[aria-current="page"] { border-bottom-color: currentColor; font-size: 1.1em; }
@@ -147,7 +144,6 @@ a:focus-visible, button:focus-visible {
   border: 2px solid currentColor;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.8);
-  transition: background var(--transition), color var(--transition);
 }
 .lang-switch a:hover { background: var(--atria-purple); color: #fff; border-color: var(--atria-purple); }
 
@@ -317,9 +313,39 @@ a:focus-visible, button:focus-visible {
   .btn-row .btn { width: 100%; }
 }
 
+/* ---------- Transición entre páginas (prototipo de Figma) ----------
+   Figma: Smart animate, 0.3 s, ease-out. Se animan el degradé (Ellipse 1) y el menú.
+   En "Sobre nosotros" la elipse mide 354.046 px de alto contra 331.081 px en Atria y DAV,
+   con la base fija: arriba queda 22.965 px más alta. Se aplica con View Transitions entre
+   páginas (Chrome, Edge y Safari recientes); en el resto se navega sin animación. */
+.nav-blob { overflow: hidden; view-transition-name: nav-blob; }
+.site-header[data-active="about"] .nav-blob__layer--about { top: calc(-40% - 22.965px); }
+
+.main-nav a[href$="dav.html"] { view-transition-name: nav-dav; }
+.main-nav a[href$="index.html"] { view-transition-name: nav-atria; }
+.main-nav a[href$="nosotros.html"],
+.main-nav a[href$="about.html"] { view-transition-name: nav-about; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  /* El resto de la página cambia de golpe: el prototipo solo anima el degradé y el menú */
+  ::view-transition-old(root) { display: none; }
+  ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+  ::view-transition-group(nav-blob), ::view-transition-group(nav-dav),
+  ::view-transition-group(nav-atria), ::view-transition-group(nav-about),
+  ::view-transition-old(nav-blob), ::view-transition-old(nav-dav),
+  ::view-transition-old(nav-atria), ::view-transition-old(nav-about),
+  ::view-transition-new(nav-blob), ::view-transition-new(nav-dav),
+  ::view-transition-new(nav-atria), ::view-transition-new(nav-about) {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+  }
+}
+
 /* ---------- Accesibilidad: reducir movimiento ---------- */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   *, *::before, *::after {
     transition: none !important;
     animation: none !important;
