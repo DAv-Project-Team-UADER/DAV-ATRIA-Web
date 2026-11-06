@@ -3,13 +3,13 @@
 Landing bilingüe (español / inglés) de Atria y DAV, en tres páginas: Atria, DAV y Sobre nosotros.
 Sitio estático, sin build ni servidor: HTML + CSS + JavaScript.
 
-Sitio publicado: https://dav-project-team-uader.github.io/DAV-ATRIA-Web/
+Sitio publicado: https://dav-atria-web.vercel.app/
 
 ## Stack
 
 - HTML semántico, CSS con variables (`:root`) y JavaScript vanilla.
 - Fuentes: Days One (títulos) e Inter (texto), desde Google Fonts.
-- Deploy: GitHub Actions + GitHub Pages.
+- Deploy: Vercel (sitio estático, sin build).
 
 ## Estructura
 
@@ -24,7 +24,6 @@ css/styles.css      Variables (colores, tipografías), estilos y responsive
 js/config.js        URLs de descargas, YouTube, manuales (único lugar)
 js/main.js          Menú hamburguesa y activación de links
 assets/             img/, icons/, fonts/ (exportados de Figma)
-.github/workflows/  pages.yml (deploy)
 ```
 
 Ambos idiomas comparten CSS, JS y assets. Cada página enlaza a su equivalente en el otro idioma
@@ -41,16 +40,14 @@ No hay build. Cualquiera de estas opciones sirve:
 
 Probar al menos en 360 px, 768 px y 1440 px de ancho.
 
-## Deploy en GitHub Pages
+## Deploy en Vercel
 
-El sitio se publica con GitHub Actions desde `main` (workflow `.github/workflows/pages.yml`).
-No se usa rama `gh-pages`.
+El repo está conectado a Vercel (proyecto `dav-atria-web`). No hay build: es un sitio estático.
 
-1. Una sola vez: en el repo, *Settings > Pages > Build and deployment > Source: GitHub Actions*.
-2. Mergear el PR a `main`. El workflow se ejecuta solo y publica la raíz del repo.
-3. Seguir el avance en la pestaña *Actions*. Al terminar, el sitio queda en la URL de arriba.
-
-GitHub Pages no genera previews por PR: validar en local antes de mergear.
+- Configuración: Framework Preset *Other*, Root Directory `./`, sin Build/Output/Install Command.
+- Producción: cada merge a `main` publica en https://dav-atria-web.vercel.app/ automáticamente.
+- Preview: cada PR y cada push a una rama genera una URL de preview (aparece como comentario en el PR).
+- Seguimiento de los deploys: pestaña *Deployments* del proyecto en Vercel.
 
 ## Qué URLs reemplazar cuando existan los instaladores y YouTube
 
