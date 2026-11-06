@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atria — Voice commands for the BIM workbench</title>
+  <meta name="description" content="Atria lets you interact with the BIM workbench tools using voice commands. Open source project from UADER.">
+  <link rel="canonical" href="https://dav-atria-web.vercel.app/en/">
+  <link rel="alternate" hreflang="es" href="https://dav-atria-web.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://dav-atria-web.vercel.app/en/">
+  <link rel="alternate" hreflang="x-default" href="https://dav-atria-web.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atria — Voice commands for the BIM workbench">
+  <meta property="og:description" content="Atria lets you interact with the BIM workbench tools using voice commands. Open source project from UADER.">
+  <meta property="og:url" content="https://dav-atria-web.vercel.app/en/">
+  <meta property="og:locale" content="en_US">
+  <!-- TODO: og:image (URL absoluta bajo https://dav-atria-web.vercel.app/assets/img/) cuando se exporte desde Figma -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235A1F6E'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-active="atria">
+    <div class="nav-blob" aria-hidden="true">
+      <span class="nav-blob__layer nav-blob__layer--atria"></span>
+      <span class="nav-blob__layer nav-blob__layer--dav"></span>
+      <span class="nav-blob__layer nav-blob__layer--about"></span>
+    </div>
+    <div class="site-header__bar">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main">
+        <a href="../en/dav.html">DAV</a>
+        <a href="../en/index.html" aria-current="page"><span translate="no" class="notranslate">Atria</span></a>
+        <a href="../en/about.html">About us</a>
+      </nav>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="../index.html" lang="es" hreflang="es" title="Español">ES</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--atria" aria-labelledby="page-title">
+      <div class="container">
+        <div class="hero">
+          <div class="hero__text">
+            <h1 id="page-title"><span translate="no" class="notranslate">Atria</span></h1>
+            <p class="lead">Interact with the BIM workbench tools using voice commands and discover a new way of working with computer-aided design.</p>
+            <div class="btn-row">
+              <a class="btn btn--atria" href="#descargas"><span class="btn__label">Download</span></a>
+            </div>
+          </div>
+          <img class="hero__visual hero__visual--atria" src="../assets/img/atria-ilustracion.svg" alt="" width="520" height="675">
+        </div>
+        <div class="downloads" id="descargas">
+          <div class="downloads__video" role="img" aria-label="Space reserved for the tutorial video"></div>
+          <p class="downloads__more">More videos on:
+            <span class="link-soon" data-link="youtube">YouTube <small>(Coming soon)</small></span>
+          </p>
+          <div class="steps" role="group" aria-label="How to install Atria">
+            <div class="step">
+              <h2>Choose your operating system</h2>
+              <p>Download the Windows or Linux version, whichever applies.</p>
+            </div>
+            <div class="step">
+              <h2>Keep the download</h2>
+              <p>If a security warning appears, select “Keep on device”.</p>
+            </div>
+            <div class="step">
+              <h2>Run the app</h2>
+              <p>Find the <span translate="no" class="notranslate">Atria</span> file and open it.</p>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn--atria" data-link="downloads.atriaLinux" disabled aria-disabled="true"><span class="btn__label">Download Linux</span><small>Coming soon</small></button>
+              <button type="button" class="btn btn--atria" data-link="downloads.atriaWindows" disabled aria-disabled="true"><span class="btn__label">Download Windows</span><small>Coming soon</small></button>
+            </div>
+          </div>
+          <div class="manual">
+            <button type="button" class="btn btn--outline btn--atria-outline" data-link="manual.atria" disabled aria-disabled="true"><span class="btn__label">Manual</span><small>Coming soon</small></button>
+            <p>The first time you open the app, it may take a few minutes to start while it downloads the required components. <strong>This process is only needed during the initial setup.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--atria">
+    <div class="container site-footer__grid">
+      <div>
+        <h2 class="site-footer__title">Contact</h2>
+        <ul>
+          <li><a href="https://github.com/DAv-Project-Team-UADER/Atria/issues" target="_blank" rel="noopener noreferrer">Repository issues</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__right">
+        <h2 class="site-footer__title">Links</h2>
+        <ul>
+          <li><a href="https://github.com/DAv-Project-Team-UADER" target="_blank" rel="noopener noreferrer">GitHub Organization</a></li>
+          <!-- TODO: confirmar la URL oficial de UADER FCyT y cargarla en js/config.js (uader) -->
+          <li><span data-link="uader">UADER FCyT</span></li>
+          <li><a href="https://www.freecad.org" target="_blank" rel="noopener noreferrer">FreeCAD</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__license">Open source project under the <a href="https://github.com/DAv-Project-Team-UADER/Atria/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 license</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
