@@ -1,29 +1,20 @@
-/*
- * Configuración central de URLs.
- * Mientras un valor esté vacío (""), el botón queda deshabilitado con el texto "Próximamente".
- * Para activarlo, pegá la URL acá. No hace falta tocar el HTML.
- *
- * URLs de ejemplo (usar cuando existan los releases; el nombre del asset debe ser siempre el mismo):
- *   atriaWindows: https://github.com/DAv-Project-Team-UADER/Atria/releases/latest/download/ATRIA_Window.exe
- *   atriaLinux:   https://github.com/DAv-Project-Team-UADER/Atria/releases/latest/download/ATRIA_Linux
- *
- * No subir binarios a este repo.
- */
 window.ATRIA_CONFIG = {
   downloads: {
-    atriaWindows: "",
-    atriaLinux: "",
-    // DAV: el PDF no define nombres de assets todavía.
-    davWindows: "",
+    atriaWindows: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.4/DAV_Installer_1.0.exe",
+    atriaLinux: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.5/DAV_Installer_1.0.exe",
+    // DAV (según la devolución): Linux -> archivo de DAV v1.0.5, Windows -> archivo de DAV v1.0.4
+    davWindows: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.4/DAV_Installer_1.0.exe",
     davLinux: ""
   },
-  // Cuando exista el canal de YouTube (se abre en pestaña nueva).
   youtube: "",
-  // Manuales (a definir).
+  // Manuales por idioma.
   manual: {
-    atria: "",
-    dav: ""
-  },
-  // URL oficial de UADER FCyT (a confirmar).
+  atria: { es: "", en: "" },
+  dav: {
+    es: "https://github.com/DAv-Project-Team-UADER/Recursos-Pedagogicos/raw/main/Manual/Manual_Usuario.pdf",
+    en: "https://github.com/DAv-Project-Team-UADER/Recursos-Pedagogicos/raw/main/Manual/User_Manual.pdf"
+  }
+},
+  // URL oficial de UADER FCyT.
   uader: "https://fcytcdelu.uader.edu.ar/"
 };
