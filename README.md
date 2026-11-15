@@ -20,9 +20,9 @@ nosotros.html       Sobre nosotros (ES)
 en/index.html       Atria (EN)
 en/dav.html         DAV (EN)
 en/about.html       About us (EN)
-css/styles.css      Variables (colores, tipografías), estilos y responsive
+css/styles.css      Variables (colores, jerarquía tipográfica), header, hero a pantalla completa y responsive
 js/config.js        URLs de descargas, YouTube, manuales (único lugar)
-js/main.js          Menú hamburguesa y activación de links
+js/main.js          Menú hamburguesa y activación de links (descargas y manuales por idioma)
 assets/             img/, icons/, fonts/ (exportados de Figma)
 ```
 
@@ -54,17 +54,21 @@ El repo está conectado a Vercel (proyecto `dav-atria-web`). No hay build: es un
 Todas las URLs están en `js/config.js`. Mientras un valor esté vacío (`""`), el botón queda
 deshabilitado con el texto "Próximamente" y no apunta a ningún link.
 
-| Clave en `config.js` | Valor cuando exista |
+| Clave en `config.js` | Valor |
 | --- | --- |
-| `downloads.atriaWindows` | `https://github.com/DAv-Project-Team-UADER/Atria/releases/latest/download/ATRIA_Window.exe` |
-| `downloads.atriaLinux` | `https://github.com/DAv-Project-Team-UADER/Atria/releases/latest/download/ATRIA_Linux` |
-| `downloads.davWindows`, `downloads.davLinux` | A definir |
+| `downloads.davLinux` | Archivo del release [DAV v1.0.5](https://github.com/DAv-Project-Team-UADER/DAV/releases/tag/v1.0.5) |
+| `downloads.davWindows` | Archivo del release [DAV v1.0.4](https://github.com/DAv-Project-Team-UADER/DAV/releases/tag/v1.0.4) |
+| `downloads.atriaWindows`, `downloads.atriaLinux` | A definir (por ejemplo `.../Atria/releases/latest/download/<archivo>`) |
+| `manual.dav.es`, `manual.dav.en` | Archivo del manual en la carpeta [Manual](https://github.com/DAv-Project-Team-UADER/Recursos-Pedagogicos/tree/main/Manual) de Recursos-Pedagogicos, uno por idioma |
+| `manual.atria.es`, `manual.atria.en` | A definir |
 | `youtube` | URL del canal (a definir) |
-| `manual.atria`, `manual.dav` | URL de la documentación (a definir) |
-| `uader` | URL oficial de UADER FCyT |
+| `uader` | https://fcytcdelu.uader.edu.ar/ |
+
+Las páginas en español usan el manual `es` y las páginas en inglés el manual `en`.
+Para copiar la URL de un archivo: clic derecho sobre el archivo en GitHub > "Copiar dirección del enlace".
 
 El nombre del asset debe ser siempre el mismo en cada release, así el botón apunta siempre a la
-última versión sin tocar la web. Las descargas son directas (sin pasar por la página de Releases).
+última versión sin tocar la web. Los instaladores se descargan directo desde el release, sin salir de la landing.
 Los links externos abren en pestaña nueva con `rel="noopener noreferrer"`. No subir binarios a este repo.
 
 ## Ramas y commits

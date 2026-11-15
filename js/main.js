@@ -24,7 +24,7 @@
       var label = el.querySelector(".btn__label");
       a.innerHTML = '<span class="btn__label"></span>';
       a.firstChild.textContent = label ? label.textContent : "";
-      if (url.indexOf("/releases/") !== -1) { // descarga directa
+      if (url.indexOf("/releases/download/") !== -1) { // instalador: descarga directa, sin salir de la página
         a.removeAttribute("target");
         a.removeAttribute("rel");
         a.setAttribute("download", "");
@@ -51,5 +51,32 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("is-open")) close(true);
     });
+  }
+
+  /* Header: se esconde al bajar y reaparece al subir (siempre visible arriba de todo o con el menú abierto) */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var lastY = window.pageYOffset;
+    var ticking = false;
+    var keepUntil = 0;
+    /* Al saltar a una sección con un link interno (botón Descargar) el header queda visible */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) { keepUntil = Date.now() + 800; header.classList.remove("is-hidden"); }
+    });
+    function update() {
+      var y = Math.max(0, window.pageYOffset);
+      var delta = y - lastY;
+      if (Date.now() < keepUntil) { lastY = y; }
+      else if (Math.abs(delta) > 6) {
+        var menuOpen = nav && nav.classList.contains("is-open");
+        header.classList.toggle("is-hidden", delta > 0 && y > 80 && !menuOpen);
+        lastY = y;
+      }
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
   }
 })();
