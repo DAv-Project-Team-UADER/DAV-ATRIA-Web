@@ -4,7 +4,7 @@ window.ATRIA_CONFIG = {
     atriaLinux: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.5/DAV_Installer_1.0.exe",
     // DAV (según la devolución): Linux -> archivo de DAV v1.0.5, Windows -> archivo de DAV v1.0.4
     davWindows: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.4/DAV_Installer_1.0.exe",
-    davLinux: ""
+    davLinux: "https://github.com/DAv-Project-Team-UADER/DAV/releases/download/v1.0.5/DAV_Installer_1.0.exe"
   },
   youtube: "",
   // Manuales por idioma.
