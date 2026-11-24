@@ -125,6 +125,14 @@ a:focus-visible, button:focus-visible {
   min-height: var(--header-h);
   pointer-events: none;
 }
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 1));
+  pointer-events: none;
+}
 .site-header > .site-header__bar { pointer-events: auto; }
 .site-header { transition: transform var(--btn-transition); }
 .site-header.is-footer-visible { transform: translateY(calc(-100% - 60px)); }
@@ -139,6 +147,7 @@ a:focus-visible, button:focus-visible {
   aspect-ratio: auto;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   pointer-events: none;
+  z-index: 1;
 }
 .site-header[data-active="atria"] {
   --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, var(--atria-purple) 0%, color-mix(in srgb, var(--dav-navy) 75%, transparent) 50%, color-mix(in srgb, var(--dav-navy) 50%, transparent) 75%, transparent 100%);
@@ -171,6 +180,7 @@ a:focus-visible, button:focus-visible {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   height: var(--header-h);
   max-width: var(--container);
   margin: 0 auto;
