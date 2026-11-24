@@ -30,8 +30,9 @@
   /* Jerarquía: título (nombre de la página, 80px) > subtítulo (36px) > texto (26px) > texto chico (16px).
      Los mínimos mantienen la lectura en pantallas chicas. */
   --fs-title: clamp(2.5rem, 8vw, 5rem);
-  --fs-sub: clamp(1.375rem, 2.6vw, 2.25rem);
-  --fs-lead: clamp(1.125rem, 2.2vw, 2rem);      /* descripción del hero */
+  --fs-sub: clamp(1.375rem, 2.6vw, 2.5rem);
+  --fs-step-title: clamp(1.25rem, 2.4vw, 2.25rem);
+  --fs-lead: clamp(1.125rem, 2.2vw, 1.875rem);      /* descripción del hero */
   --fs-text: clamp(1rem, 1.9vw, 1.625rem);      /* párrafos, pasos, listas */
   --fs-small: 1rem;
   --fs-btn: clamp(0.9375rem, 1.4vw, 1.25rem);        /* TODO: confirmar tamaño de texto del botón */
@@ -338,7 +339,7 @@ a:focus-visible, button:focus-visible {
 .downloads__more { grid-column: 1; font-size: var(--fs-small); margin: 0; }
 .steps { grid-column: 2; grid-row: 1 / span 2; color: #000; }
 .step { margin-bottom: 18px; font-size: var(--fs-text); line-height: 1.2; }
-.step h2, .step h3 { font-family: var(--font-body); font-size: var(--fs-sub); line-height: inherit; font-weight: 700; letter-spacing: 0; margin: 0; }
+.step h2, .step h3 { font-family: var(--font-body); font-size: var(--fs-step-title); line-height: inherit; font-weight: 700; letter-spacing: 0; margin: 0; }
 .step p { font-weight: 400; margin: 0; }
 .manual {
   grid-column: 1 / -1;
