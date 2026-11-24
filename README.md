@@ -14,12 +14,14 @@ Sitio publicado: https://dav-atria-web.vercel.app/
 ## Estructura
 
 ```
-index.html          Atria (ES, por defecto en /)
-dav.html            DAV (ES)
-nosotros.html       Sobre nosotros (ES)
-en/index.html       Atria (EN)
-en/dav.html         DAV (EN)
-en/about.html       About us (EN)
+index.html          Atria (ES, /atria)
+dav.html            DAV (ES, /DAV)
+nosotros.html       Sobre nosotros (/nosotros)
+en/index.html       Atria (EN, /en/atria)
+en/dav.html         DAV (EN, /en/DAV)
+en/about.html       About us (/en/aboutUs)
+vercel.json         Rutas limpias, redirecciones y rewrites de Vercel
+dev_server.py       Preview local de las rutas limpias, sin cuenta de Vercel
 css/styles.css      Variables (colores, jerarquía tipográfica), header, hero a pantalla completa y responsive
 js/config.js        URLs de descargas, YouTube, manuales (único lugar)
 js/main.js          Header fijo, visibilidad según footer y activación de links por idioma
@@ -31,12 +33,21 @@ Ambos idiomas comparten CSS, JS y assets. Cada página enlaza a su equivalente e
 
 ## Levantarlo en local
 
-No hay build. Cualquiera de estas opciones sirve:
+No hay build ni hace falta iniciar sesión en Vercel. Para probar localmente las rutas
+limpias configuradas en `vercel.json`, ejecutar:
+
+```bash
+python dev_server.py
+```
+
+Luego abrir `http://localhost:8001/atria` (también están disponibles las otras cinco rutas).
+Los servidores estáticos simples no aplican rewrites; con ellos, abrir los archivos `.html`
+directamente:
 
 - Abrir `index.html` en el navegador.
 - Servir la carpeta con Python: `python -m http.server 8000` y entrar a
-  http://localhost:8000/ (español) o http://localhost:8000/en/ (inglés).
-- En VS Code, con la extensión Live Server (usar siempre la barra final en `/en/`).
+  `http://localhost:8000/index.html`, `dav.html`, `nosotros.html` o sus equivalentes en `en/`.
+- En VS Code, con la extensión Live Server, abrir las páginas `.html` correspondientes.
 
 Probar al menos en 360 px, 768 px y 1440 px de ancho.
 

@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/atria", "permanent": true },
+    { "source": "/en", "destination": "/en/atria", "permanent": true },
+    { "source": "/index.html", "destination": "/atria", "permanent": true },
+    { "source": "/dav.html", "destination": "/DAV", "permanent": true },
+    { "source": "/nosotros.html", "destination": "/nosotros", "permanent": true },
+    { "source": "/en/index.html", "destination": "/en/atria", "permanent": true },
+    { "source": "/en/dav.html", "destination": "/en/DAV", "permanent": true },
+    { "source": "/en/about.html", "destination": "/en/aboutUs", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/atria", "destination": "/index.html" },
+    { "source": "/DAV", "destination": "/dav.html" },
+    { "source": "/nosotros", "destination": "/nosotros.html" },
+    { "source": "/en/atria", "destination": "/en/index.html" },
+    { "source": "/en/DAV", "destination": "/en/dav.html" },
+    { "source": "/en/aboutUs", "destination": "/en/about.html" }
+  ]
+}
