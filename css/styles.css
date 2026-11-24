@@ -57,7 +57,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-padding-top: var(--header-h); }
+html {
+  scroll-padding-top: var(--header-h);
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -252,6 +255,13 @@ a:focus-visible, button:focus-visible {
 }
 .section--screen > .container { width: 100%; }
 
+@media (min-width: 721px) {
+  .section--atria.section--screen,
+  .section--about.section--screen {
+    padding: 0 0 var(--header-h);
+  }
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -443,6 +453,7 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- Accesibilidad: reducir movimiento ---------- */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     transition: none !important;
     animation: none !important;
