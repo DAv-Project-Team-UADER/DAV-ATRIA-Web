@@ -558,7 +558,7 @@ a:focus-visible, button:focus-visible {
 .team__list li { padding: 2px 0; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--atria-slate); color: #fff; padding: 32px 0 88px; } /* margen abajo: no tapar los links con el botón de idioma */
+.site-footer { background: var(--atria-slate); color: #fff; padding: 32px 0 32px; } /* deja espacio para el botón de idioma fijo */
 .site-footer--atria { background: var(--atria-slate); }
 /* Figma usa blanco sobre #49A6CF (2.7:1, no cumple AA); se usa texto oscuro (6:1) */
 .site-footer--dav { background: var(--dav-sky); color: #0b1f2e; }
