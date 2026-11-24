@@ -131,8 +131,8 @@ a:focus-visible, button:focus-visible {
   left: auto;
   transform: none;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3000 / 331;
+  height: max(80px, 10vw);
+  aspect-ratio: auto;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   pointer-events: none;
 }
@@ -154,8 +154,8 @@ a:focus-visible, button:focus-visible {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1500 / 331;
+  height: max(160px, 20vw);
+  aspect-ratio: auto;
   transform: translateY(-50%);
   border-radius: 50%;
   background: var(--nav-gradient);
@@ -195,8 +195,9 @@ a:focus-visible, button:focus-visible {
   font-size: var(--nav-font-size);
   padding: 6px 4px;
   white-space: nowrap;
+  transition: transform 150ms ease-out;
 }
-.main-nav a:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.main-nav a:hover { text-decoration: none; transform: scale(0.97); }
 .main-nav a[aria-current="page"] {
   grid-column: 2;
   justify-self: center;
