@@ -35,24 +35,6 @@
     el.replaceWith(a);
   });
 
-  /* Menú hamburguesa */
-  var toggle = document.querySelector(".menu-toggle");
-  var nav = document.getElementById("main-nav");
-  if (toggle && nav) {
-    function close(focus) {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-      if (focus) toggle.focus();
-    }
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && nav.classList.contains("is-open")) close(true);
-    });
-  }
-
   /* El header permanece visible durante el scroll y se oculta mientras el footer está en pantalla. */
   var header = document.querySelector(".site-header");
   if (header) {

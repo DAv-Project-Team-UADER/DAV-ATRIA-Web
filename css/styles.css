@@ -207,18 +207,6 @@ a:focus-visible, button:focus-visible {
   transform: translateY(var(--nav-active-offset));
 }
 
-.menu-toggle {
-  display: none;
-  font: inherit;
-  font-weight: 700;
-  padding: 8px 14px;
-  border: 2px solid currentColor;
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--nav-text);
-  cursor: pointer;
-}
-
 /* ---------- Selector de idioma: fijo abajo a la derecha, color según la página ---------- */
 .lang-switch {
   position: fixed;
@@ -394,30 +382,24 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 720px) {
-  :root { --header-h: 64px; }
-  .nav-blob { width: 100%; }
-  .menu-toggle { display: inline-block; }
-  .main-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: var(--gutter);
-    right: var(--gutter);
-    width: auto;
-    max-width: none;
-    margin: 0;
-    column-gap: 4px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    padding: 12px 16px 16px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-muted);
-    border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  :root {
+    --header-h: 64px;
+    --nav-font-size: clamp(12px, 3.5vw, 16px);
+    --nav-active-font-size: clamp(18px, 3vw, 24px);
+    --nav-gap: clamp(2px, 0.6vw, 4px);
+    --nav-max-width: 92%;
+    --nav-active-offset: 15px;
   }
-  .main-nav a, .main-nav a[aria-current="page"] { color: var(--nav-text); font-size: 1.125rem; transform: none; }
-  .main-nav.is-open { display: flex; }
+  /* Keeps the visible ellipse height proportional to the active link on narrow screens. */
+  .site-header .nav-blob {
+    font-size: var(--nav-active-font-size);
+    height: 3.667em;
+    aspect-ratio: auto;
+  }
+  .site-header .nav-blob::before {
+    height: 7.334em;
+    aspect-ratio: auto;
+  }
   .teams { grid-template-columns: 1fr; }
   .section { padding: 40px 0; }
   .section--screen { padding: 12px 0 72px; } /* deja lugar al botón de idioma fijo */
