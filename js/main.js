@@ -53,30 +53,22 @@
     });
   }
 
-  /* Header: se esconde al bajar y reaparece al subir (siempre visible arriba de todo o con el menú abierto) */
+  /* El header permanece visible durante el scroll y se oculta mientras el footer está en pantalla. */
   var header = document.querySelector(".site-header");
   if (header) {
-    var lastY = window.pageYOffset;
+    var footer = document.querySelector(".site-footer");
     var ticking = false;
-    var keepUntil = 0;
-    /* Al saltar a una sección con un link interno (botón Descargar) el header queda visible */
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest('a[href^="#"]');
-      if (a) { keepUntil = Date.now() + 800; header.classList.remove("is-hidden"); }
-    });
     function update() {
-      var y = Math.max(0, window.pageYOffset);
-      var delta = y - lastY;
-      if (Date.now() < keepUntil) { lastY = y; }
-      else if (Math.abs(delta) > 6) {
-        var menuOpen = nav && nav.classList.contains("is-open");
-        header.classList.toggle("is-hidden", delta > 0 && y > 80 && !menuOpen);
-        lastY = y;
-      }
+      var footerRect = footer && footer.getBoundingClientRect();
+      var footerVisible = footerRect && footerRect.top < window.innerHeight && footerRect.bottom > 0;
+      header.classList.toggle("is-footer-visible", Boolean(footerVisible));
       ticking = false;
     }
-    window.addEventListener("scroll", function () {
+    function scheduleUpdate() {
       if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-    }, { passive: true });
+    }
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    scheduleUpdate();
   }
 })();

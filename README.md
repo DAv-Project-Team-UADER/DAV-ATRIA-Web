@@ -22,7 +22,7 @@ en/dav.html         DAV (EN)
 en/about.html       About us (EN)
 css/styles.css      Variables (colores, jerarquía tipográfica), header, hero a pantalla completa y responsive
 js/config.js        URLs de descargas, YouTube, manuales (único lugar)
-js/main.js          Menú hamburguesa y activación de links (descargas y manuales por idioma)
+js/main.js          Menú hamburguesa, header oculto al entrar el footer y activación de links por idioma
 assets/             img/, icons/, fonts/ (exportados de Figma)
 ```
 

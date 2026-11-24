@@ -61,6 +61,7 @@ html { scroll-padding-top: var(--header-h); }
 
 body {
   margin: 0;
+  padding-top: var(--header-h);
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--color-text);
@@ -112,25 +113,26 @@ a:focus-visible, button:focus-visible {
 /* Medio elipse con degradé que contiene los tres nombres. El activo va al centro y subrayado.
    El degradé y el color del texto cambian según la página (data-active). */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  height: var(--header-h);
+  min-height: var(--header-h);
   pointer-events: none;
 }
-.site-header > * { pointer-events: auto; }
-/* Se esconde al bajar (clase .is-hidden desde main.js) y vuelve al subir. Mismo timing que el prototipo. */
+.site-header > .site-header__bar { pointer-events: auto; }
 .site-header { transition: transform var(--btn-transition); }
-.site-header.is-hidden { transform: translateY(-100%); }
-.site-header.is-hidden:focus-within { transform: none; }
+.site-header.is-footer-visible { transform: translateY(calc(-100% - 60px)); }
 
 .nav-blob {
-  position: absolute;
+  position: relative;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: auto;
+  transform: none;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 3000 / 331;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   pointer-events: none;
 }
@@ -145,8 +147,6 @@ a:focus-visible, button:focus-visible {
 }
 .site-header .nav-blob {
   background: none;
-  height: auto;
-  aspect-ratio: 3000 / 331;
 }
 .site-header .nav-blob::before {
   content: "";
@@ -163,8 +163,11 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-header__bar {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
