@@ -8,7 +8,7 @@ Sitio publicado: https://dav-atria-web.vercel.app/
 ## Stack
 
 - HTML semántico, CSS con variables (`:root`) y JavaScript vanilla.
-- Fuentes: Days One (títulos) e Inter (texto), desde Google Fonts.
+- Fuentes: Alan Sans (navegación), Days One (títulos) e Inter (texto), importadas desde Google Fonts en `css/styles.css`.
 - Deploy: Vercel (sitio estático, sin build).
 
 ## Estructura

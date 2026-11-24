@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Days+One&family=Inter:wght@400;600;700&display=swap");
+
 /* ==========================================================
    Atria / DAV — landing
    Variables del Figma: colores y tipografías
@@ -24,6 +26,7 @@
   /* Tipografía */
   --font-title: "Days One", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-nav: "Alan Sans", system-ui, sans-serif;
   /* Jerarquía: título (nombre de la página, 80px) > subtítulo (36px) > texto (26px) > texto chico (16px).
      Los mínimos mantienen la lectura en pantallas chicas. */
   --fs-title: clamp(2.5rem, 8vw, 5rem);
@@ -38,6 +41,15 @@
   --container: 1360px;
   --gutter: 16px;
   --radius: 8px;
+
+  /* Navegación */
+  --nav-text: #000;
+  --nav-font-size: clamp(18px, 1.667vw, 25px);
+  --nav-active-font-size: clamp(30px, 3vw, 45px);
+  --nav-gap: clamp(12px, 1.333vw, 20px);
+  --nav-max-width: 1100px;
+  --nav-blur: blur(min(1.333vw, 20px));
+  --nav-active-offset: 19px;
 
   /* Animación: solo lo definido en el prototipo de Figma */
   --btn-transition: 300ms ease-out;  /* botones: Figma, Smart animate 300ms ease-out */
@@ -123,16 +135,13 @@ a:focus-visible, button:focus-visible {
   pointer-events: none;
 }
 .site-header[data-active="atria"] {
-  --nav-text: #000;
-  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, #5A1F6E 0%, rgb(16 70 116 / 75%) 50%, rgb(16 70 116 / 50%) 75%, rgb(16 70 116 / 0%) 100%);
+  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, var(--atria-purple) 0%, color-mix(in srgb, var(--dav-navy) 75%, transparent) 50%, color-mix(in srgb, var(--dav-navy) 50%, transparent) 75%, transparent 100%);
 }
 .site-header[data-active="dav"] {
-  --nav-text: #000;
-  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, #60AC76 0%, rgb(146 181 78 / 75%) 50%, rgb(239 179 54 / 50%) 75%, rgb(239 179 54 / 0%) 100%);
+  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, var(--dav-green) 0%, color-mix(in srgb, var(--dav-lime) 75%, transparent) 50%, color-mix(in srgb, var(--dav-amber) 50%, transparent) 75%, transparent 100%);
 }
 .site-header[data-active="about"] {
-  --nav-text: #000;
-  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, #455362 0%, rgb(141 170 199 / 75%) 50%, rgb(141 170 199 / 50%) 75%, rgb(141 170 199 / 0%) 100%);
+  --nav-gradient: radial-gradient(ellipse farthest-side at 50% 50%, var(--atria-slate) 0%, color-mix(in srgb, var(--atria-blue-gray) 75%, transparent) 50%, color-mix(in srgb, var(--atria-blue-gray) 50%, transparent) 75%, transparent 100%);
 }
 .site-header .nav-blob {
   background: none;
@@ -150,7 +159,7 @@ a:focus-visible, button:focus-visible {
   transform: translateY(-50%);
   border-radius: 50%;
   background: var(--nav-gradient);
-  filter: blur(min(1.333vw, 20px));
+  filter: var(--nav-blur);
 }
 
 .site-header__bar {
@@ -168,19 +177,19 @@ a:focus-visible, button:focus-visible {
 .main-nav {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  column-gap: clamp(12px, 1.333vw, 20px);
+  column-gap: var(--nav-gap);
   align-items: center;
   width: 100%;
-  max-width: 1100px;
+  max-width: var(--nav-max-width);
   margin: 0 auto;
-  font-family: "Alan Sans", sans-serif;
+  font-family: var(--font-nav);
 }
 .main-nav a:first-child, .main-nav a:last-child { justify-self: center; }
 .main-nav a {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 600;
-  font-size: clamp(18px, 1.667vw, 25px);
+  font-size: var(--nav-font-size);
   padding: 6px 4px;
   white-space: nowrap;
 }
@@ -188,11 +197,11 @@ a:focus-visible, button:focus-visible {
 .main-nav a[aria-current="page"] {
   grid-column: 2;
   justify-self: center;
-  font-size: clamp(30px, 3vw, 45px);
+  font-size: var(--nav-active-font-size);
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 3px;
-  transform: translateY(19px);
+  transform: translateY(var(--nav-active-offset));
 }
 
 .menu-toggle {
@@ -394,6 +403,7 @@ a:focus-visible, button:focus-visible {
     width: auto;
     max-width: none;
     margin: 0;
+    column-gap: 4px;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
@@ -403,7 +413,7 @@ a:focus-visible, button:focus-visible {
     border-radius: var(--radius);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   }
-  .main-nav a, .main-nav a[aria-current="page"] { color: #000; font-size: 1.125rem; transform: none; }
+  .main-nav a, .main-nav a[aria-current="page"] { color: var(--nav-text); font-size: 1.125rem; transform: none; }
   .main-nav.is-open { display: flex; }
   .teams { grid-template-columns: 1fr; }
   .section { padding: 40px 0; }
