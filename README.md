@@ -23,7 +23,7 @@ en/about.html       About us (/en/aboutUs)
 vercel.json         Rutas limpias, redirecciones y rewrites de Vercel
 dev_server.py       Preview local de las rutas limpias, sin cuenta de Vercel
 css/styles.css      Variables (colores, jerarquía tipográfica), header, hero a pantalla completa y responsive
-js/config.js        URLs de descargas, YouTube, manuales (único lugar)
+js/config.js        URLs de descargas, YouTube y carpetas de manuales
 js/main.js          Header fijo, visibilidad según footer y activación de links por idioma
 assets/             img/, icons/, fonts/ (exportados de Figma)
 ```
